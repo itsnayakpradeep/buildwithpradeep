@@ -1,0 +1,8 @@
+<svg viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <path d="M6 26L14 18L22 22L30 12"></path>
+  </g>
+  <text x="40" y="25" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" letter-spacing="0.5">
+    GrowthLab
+  </text>
+</svg>

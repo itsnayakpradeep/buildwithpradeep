@@ -1,0 +1,209 @@
+/* app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: all 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-bg text-text-primary font-sans;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glow Button */
+.btn-glow {
+  @apply shadow-glow transition;
+}
+.btn-glow:hover {
+  @apply shadow-glowStrong scale-105;
+}
+
+/* Card Style */
+.card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 transition;
+}
+.card:hover {
+  @apply border-primary;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* 🌈 animated gradient blobs */
+.gradient-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: float 12s infinite ease-in-out;
+}
+
+.gradient-blob.blue {
+  background: #2563eb;
+  top: -100px;
+  left: -100px;
+}
+
+.gradient-blob.purple {
+  background: #9333ea;
+  bottom: -100px;
+  right: -100px;
+}
+
+.gradient-blob.pink {
+  background: #ec4899;
+  top: 40%;
+  left: 40%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
+
+/* 🌟 gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* 🧊 premium glass card */
+.card-premium {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 30px rgba(59,130,246,0.1);
+}
+
+/* ✨ glowing icons */
+.icon-glow {
+  padding: 12px;
+  border-radius: 12px;
+}
+.icon-glow.blue { background: rgba(59,130,246,0.2); }
+.icon-glow.green { background: rgba(34,197,94,0.2); }
+
+/* inputs */
+.input-premium {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+}
+.input-premium:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* 🔥 premium buttons */
+.btn-premium {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  transition: 0.3s;
+}
+.btn-premium:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #9333ea;
+}
+
+.btn-green-premium {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.btn-blue-premium {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+
+/* pill */
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+
+  transition: 0.3s;
+}
+
+/* icon glow */
+.stat-icon {
+  color: #3b82f6;
+  filter: drop-shadow(0 0 6px rgba(59,130,246,0.7));
+}
+
+/* hover effect */
+.stat-pill:hover {
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 0 20px rgba(59,130,246,0.15);
+  transform: translateY(-2px);
+}
+
+/* Breadcrumb hover glow */
+.text-white\/50 a:hover {
+  text-shadow: 0 0 6px rgba(59,130,246,0.6);
+}
+
+
+/* badge */
+.badge-blue {
+  @apply inline-flex px-4 py-1 rounded-full text-blue-400 bg-blue-500/10 border border-blue-500/30 text-sm;
+}
+
+/* filter pills */
+.filter-pill {
+  @apply px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white/70 hover:border-blue-500/40 transition;
+}

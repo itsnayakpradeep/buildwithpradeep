@@ -1,0 +1,9 @@
+<svg viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <path d="M6 26C10 14 22 14 26 26"></path>
+  </g>
+  <circle cx="16" cy="18" r="2" fill="#ffffff"></circle>
+  <text x="40" y="25" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" letter-spacing="0.5">
+    MindShift
+  </text>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 170 40" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#ffffff" stroke-width="2">
+    <path d="M8 28L24 12"></path>
+  </g>
+  <circle cx="24" cy="12" r="3" fill="#ffffff"></circle>
+  <text x="36" y="25" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" letter-spacing="0.5">
+    StartupX
+  </text>
+</svg>

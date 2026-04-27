@@ -1,0 +1,9 @@
+<svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#ffffff" stroke-width="2">
+    <circle cx="14" cy="20" r="8"></circle>
+    <path d="M10 20h8"></path>
+  </g>
+  <text x="32" y="25" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" letter-spacing="0.5">
+    FitCoach
+  </text>
+</svg>
