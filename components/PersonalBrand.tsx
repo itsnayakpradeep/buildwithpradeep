@@ -60,15 +60,15 @@ export default function PersonalBrand() {
           <div className="flex items-center gap-6 flex-wrap">
 
             {[
-              { name: "React.js", icon: "/tech/react.svg" },
-              { name: "Next.js", icon: "/tech/next.js.svg",invert: true },
-              { name: "JavaScript", icon: "/tech/javascript.svg" },
-              { name: "TypeScript", icon: "/tech/typescript.svg" },
-              { name: "Tawilwind CSS", icon: "/tech/tailwind css.svg" },
+              { name: "React.js", icon: "/tech/React.svg" },
+              { name: "Next.js", icon: "/tech/Next.js.svg",invert: true },
+              { name: "JavaScript", icon: "/tech/JavaScript.svg" },
+              { name: "TypeScript", icon: "/tech/TypeScript.svg" },
+              { name: "Tawilwind CSS", icon: "/tech/Tailwind CSS.svg" },
               {name: "Redux", icon: "/tech/Redux.svg"},
-              {name : "Bootstrap" , icon: "/tecH/Bootstrap.svg"},
-              { name: "Node.js", icon: "/tech/node.js.svg"},
-              { name: "MongoDB", icon: "/tech/mongodb.svg" },
+              {name : "Bootstrap" , icon: "/tech/Bootstrap.svg"},
+              { name: "Node.js", icon: "/tech/Node.js.svg"},
+              { name: "MongoDB", icon: "/tech/MongoDB.svg" },
               {name: "MySQL", icon: "/tech/MySQL.svg"}
             ].map((tech, i) => (
               <motion.div

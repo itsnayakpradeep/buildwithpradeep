@@ -18,11 +18,11 @@ export default function Orbit3D() {
     });
 
   const techStack = [
-    { src: "/tech/react.svg", angle: 0 },
-    { src: "/tech/next.js.svg", angle: 72, invert: true },
-    { src: "/tech/javascript.svg", angle: 144 },
-    { src: "/tech/typescript.svg", angle: 216 },
-    { src: "/tech/tailwind css.svg", angle: 288 },
+    { src: "/tech/React.svg", angle: 0 },
+    { src: "/tech/Next.js.svg", angle: 72, invert: true },
+    { src: "/tech/JavaScript.svg", angle: 144 },
+    { src: "/tech/TypeScript.svg", angle: 216 },
+    { src: "/tech/Tailwind CSS.svg", angle: 288 },
   ];
 
   return (
