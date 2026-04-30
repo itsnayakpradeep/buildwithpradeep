@@ -91,17 +91,17 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 hover:text-white transition">
               <Mail size={16} />
-              <span>hello@buildwithpradeep.com</span>
+              <span>hello@buildwithpradeep.dev</span>
             </div>
 
-            <div className="flex items-center gap-3 hover:text-white transition">
+            <Link href="https://www.instagram.com/buildwithpradeep.dev/" className="flex items-center gap-3 hover:text-white transition">
               <span className="text-pink-500">📸</span>
-              <span>@buildwithpradeep</span>
-            </div>
+              <span>@buildwithpradeep.dev</span>
+            </Link>
 
             <div className="flex items-center gap-3 hover:text-white transition">
               <Phone size={16} />
-              <span>+91 12345 67890</span>
+              <span>+91 9178975741</span>
             </div>
 
           </div>

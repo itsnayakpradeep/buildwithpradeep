@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Calendar, Lock, CheckCircle } from "lucide-react";
 import Image from "next/image";
@@ -8,8 +9,61 @@ import FloatingBackButton from "@/components/FloatingBackButton";
 import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import toast from "react-hot-toast";
 
 export default function ContactPage() {
+
+  const [projectType, setProjectType] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+      projectType,
+    };
+
+    console.log(data);
+
+    // validation
+    if (!data.name || !data.email || !data.message || !projectType) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        toast.success("Message sent successfully 🚀");
+        form.reset();
+        setProjectType("");
+      } else {
+        toast.error(result.error || "Something went wrong");
+      }
+    } catch (err) {
+      toast.error( "Server error");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <>
     <Navbar />  
@@ -85,15 +139,16 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid md:grid-cols-2 gap-4">
-              <input className="input-premium" placeholder="John Doe" />
-              <input className="input-premium" placeholder="john@example.com" />
+              <input name="name" className="input-premium" placeholder="John Doe" />
+              <input name="email" className="input-premium" placeholder="john@example.com" suppressHydrationWarning />
             </div>
 
-            <CustomSelect />
+            <CustomSelect value={projectType} onChange={setProjectType} />
 
             <textarea
+              name="message"
               rows={4}
               className="input-premium"
               placeholder="Tell me about your project..."
@@ -130,7 +185,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <a href="#" className="btn-green-premium">
+            <a  href="https://wa.me/919178975741?text=Hi%20Pradeep%20I%20want%20a%20website" className="btn-green-premium">
               Chat Now →
             </a>
           </motion.div>

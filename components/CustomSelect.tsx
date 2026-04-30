@@ -10,9 +10,13 @@ const options = [
   "Custom Project",
 ];
 
-export default function CustomSelect() {
+type CustomSelectProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+export default function CustomSelect({ value, onChange }: CustomSelectProps) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("");
   const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -39,7 +43,7 @@ export default function CustomSelect() {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white/70 hover:border-blue-500/40 transition"
       >
-        {selected || "Select project type"}
+        { value || "Select project type"}
 
         <ChevronDown
           size={16}
@@ -55,11 +59,11 @@ export default function CustomSelect() {
             <div
               key={i}
               onClick={() => {
-                setSelected(option);
+                onChange(option);
                 setTimeout(() => setOpen(false), 100);
               }}
               className={`px-4 py-3 text-sm cursor-pointer transition
-                ${selected === option
+                ${value === option
                     ? "bg-blue-500/20 text-white"
                     : "text-white/70 hover:bg-blue-500/10"
                 }`}
