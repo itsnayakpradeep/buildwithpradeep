@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import BrandLogo from "./BrandLogo";
@@ -64,17 +64,17 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#faq" className="hover:text-white transition">
+              <Link href="/faq" className="hover:text-white transition">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white transition">
+              <Link href="/privacy" className="hover:text-white transition">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white transition">
+              <Link href="/terms" className="hover:text-white transition">
                 Terms & Conditions
               </Link>
             </li>
@@ -95,7 +95,12 @@ export default function Footer() {
             </div>
 
             <Link href="https://www.instagram.com/buildwithpradeep.dev/" className="flex items-center gap-3 hover:text-white transition">
-              <span className="text-pink-500">📸</span>
+              <Image
+                src="/icons/instagram.svg"
+                alt="Instagram"
+                width={16}
+                height={16}
+              />
               <span>@buildwithpradeep.dev</span>
             </Link>
 

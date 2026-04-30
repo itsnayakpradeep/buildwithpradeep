@@ -5,12 +5,16 @@
 @tailwind utilities;
 
 * {
-  transition: all 0.2s ease;
+  transition-property: background-color, border-color, color, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }
 
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
+
 
 html, body {
   overflow-x: hidden;
@@ -20,10 +24,6 @@ body {
   @apply bg-bg text-text-primary font-sans;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Glow Button */
 .btn-glow {

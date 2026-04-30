@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const blogs = [
   {
@@ -50,6 +53,8 @@ const blogs = [
 
 export default function BlogPage() {
   return (
+    <>
+    <Navbar/>
     <main className="pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
 
       {/* 🔥 HERO */}
@@ -171,5 +176,7 @@ export default function BlogPage() {
       </section>
 
     </main>
+    <Footer />
+    </>
   );
 }
