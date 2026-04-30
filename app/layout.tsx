@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";
+import Analytics from "@/components/Analytics";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +93,22 @@ export default function RootLayout({
         />
         {children}
         <ScrollToTop />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JPMTKNC9HM"
+          strategy="afterInteractive"
+        />
+
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-JPMTKNC9HM');
+          `}
+        </Script>
+
+        <Analytics />
         </body>
     </html>
   );
