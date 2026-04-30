@@ -5,16 +5,36 @@ import { useState, useEffect, useRef } from "react";
 import { useAnimationFrame, motion } from "framer-motion";
 
 export default function Orbit3D() {
+    const [radius, setRadius] = useState(150);
+    const [yFactor, setYFactor] = useState(0.4);
     const [angle, setAngle] = useState(0);
     const mounted = useRef(false);
+    
 
     useEffect(() => {
     mounted.current = true;
     }, []);
 
+
+    useEffect(() => {
+      const updateRadius = () => {
+        if (window.innerWidth < 640) {
+          setRadius(90); // mobile
+        } else if (window.innerWidth < 1024) {
+          setRadius(120); // tablet
+        } else {
+          setRadius(150); // desktop
+        }
+      };
+
+      updateRadius();
+      window.addEventListener("resize", updateRadius);
+      return () => window.removeEventListener("resize", updateRadius);
+    }, []);
+    
     useAnimationFrame((t, delta) => {
     if (!mounted.current) return;
-    setAngle((prev) => prev + delta * 0.015);
+    setAngle((prev) => prev + delta * 0.01);
     });
 
   const techStack = [
@@ -25,8 +45,9 @@ export default function Orbit3D() {
     { src: "/tech/Tailwind CSS.svg", angle: 288 },
   ];
 
+  
   return (
-    <div className="relative flex justify-center items-center h-[400px]">
+    <div className="relative flex justify-center items-center h-[300px] sm:h-[400px]">
 
       {/* 🔵 Glow */}
       <div className="absolute w-80 h-80 bg-blue-500/20 blur-[120px] rounded-full" />
@@ -34,16 +55,13 @@ export default function Orbit3D() {
 
       {/* 🌐 REAL 3D ORBIT */}
       {techStack.map((icon, i) => {
-        const baseAngle = (icon.angle * Math.PI) / 180;
-        const current = baseAngle + (mounted ? angle * 0.01 : 0);
-
-        const radius = 150;
+         const baseAngle = (icon.angle * Math.PI) / 180;
+        const current = baseAngle + angle * 0.01;
 
         const x = Math.cos(current) * radius;
-        const y = Math.sin(current) * radius * 0.4;
+        const y = Math.sin(current) * radius * yFactor;
 
         const depth = (Math.sin(current) + 1) / 2;
-
         const scale = 0.6 + depth * 0.6;
         const opacity = 0.4 + depth * 0.6;
 
